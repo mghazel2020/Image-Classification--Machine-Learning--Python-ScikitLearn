@@ -239,17 +239,7 @@ Evaluate the performance of the trained model using various performance metrics:
 
 The model accuracy captures how the model performs on new data (test set) in one value, in terms of the fraction of correct predictions:
 
-```math
-Accuracy = \frac{\mbox{correct predictions}}{\mbox{total number of test images}}
-```
-
-$`Accuracy = \frac{\mbox{correct predictions}}{\mbox{total number of test images}}`$
-
-
-```math
-SE = \frac{\sigma}{\sqrt{n}}
-```
-The syntax for inline latex is $`\sqrt{2}`$.
+<img alt="formula" src="https://render.githubusercontent.com/render/math?math=Accuracy%20=%20\frac{\mbox{correct%20predictions}}{\mbox{total%20number%20of%20test%20images}}" />
 
 
 ```python
