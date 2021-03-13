@@ -16,6 +16,10 @@ A quick summary of the DIGITS data set is as follows:
 *   The DIGITS have been size-normalized and centered in a fixed-size grayscale image (8x8x1 pixels)
 *   This is different from the full MNIST data set, where the grayscale images are 28x28x1 pixels.
 
+A sample of the DIGITS images are illustrated next.
+
+![image](https://user-images.githubusercontent.com/80174045/111051767-6bea7900-840a-11eb-99de-ecf39a3c76aa.png)
+
 Next, we oultline the standard standard ML via Scikit-Learn process, which is adopted as our appraoch.
     
 # 4. Approach
@@ -121,7 +125,7 @@ def visualize_images_and_labels(num_visualized_images = 25):
         # display the image
         ax.imshow(image, cmap=plt.cm.gray_r, interpolation='nearest')
         # set the title showing the image label
-        ax.set_title('y =' + str(label))
+        ax.set_title('y =' + str(label), size = 8)
 ```
 
 ```python
@@ -130,13 +134,15 @@ visualize_images_and_labels(num_visualized_images)
 ```
 [Output]  
 
-![image](https://user-images.githubusercontent.com/80174045/111039555-9248ee00-83e3-11eb-9514-c4da3a6fc2c2.png)
+![image](https://user-images.githubusercontent.com/80174045/111051839-dac7d200-840a-11eb-9795-6f69400af64a.png)
 
 We  Split the data into training and testing subsets:
 *   Use 20 percent of data set for testing  
 *   Use 80 percent of data set for training.
 
 ```python
+# fraction of the test data
+test_data_fraction = 0.20
 # Split the data into training (0.2) and testing (0.2) data sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = test_data_fraction, random_state = random_state_seed, shuffle=False)
 ```
@@ -153,7 +159,7 @@ print('Number of test images = {}'.format(num_test_images))
 Number of train images = 1347
 Number of test images = 450
 ```
-We also examine the number of examples of each class in the training uset in order to make sure that the 10 classes are approximately balanced. That is, we typically want to make sure that we have similar number of examples of each digit in the training data subset because most ofthe ML classification algorithms used in this work expect training data set with balanced classes. 
+We also examine the number of examples of each class in the training and testing subsets in order to make sure that the 10 classes are approximately balanced. That is, we typically want to make sure that we have similar number of examples of each digit in the training data subset because most ofthe ML classification algorithms used in this work expect training data set with balanced classes. 
 
 [Output]  
 
@@ -163,7 +169,7 @@ We now normaize the training and testing images:
 * Grayscale image values range from 0 to 255
 * Scale by 255 to normalize the range betwen 0 and 1
 * We experimented with normalizing the input images
-  * Therefore, we set a flag to indicate whether or not we normaized the input images.
+* We set a flag to indicate whether or not we normaized the input images to see if normalizing the input training and test images improves the model performance.
 ```python
 # nomalize the train and test images if desired
 if ( normalize_images_flag == 1):
@@ -172,7 +178,6 @@ if ( normalize_images_flag == 1):
   # normalize X_test
   X_test =  X_test / 255
 ```
-
 
 ## 4.2. Import and instantiate the Scikit-Learn ML model:
 
@@ -220,7 +225,8 @@ SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
 ```
 We now visualize 25 randomly selected test images and their associated predicted labels.
 
-![image](https://user-images.githubusercontent.com/80174045/111040270-1355b480-83e7-11eb-9021-cb114f1b42cc.png)
+![image](https://user-images.githubusercontent.com/80174045/111051911-7eb17d80-840b-11eb-90dd-cc5dff68bb7c.png)
+
 
 ## 4.5 Step 5: Evaluate the performance of the trained model:
 
@@ -370,7 +376,7 @@ svm_model_grid.best_params_
 
 [Output]  
 ```
-{'C': 10.0, 'gamma': 100.0, 'kernel': 'rbf'}
+{'C': 10.0, 'gamma': 0.001, 'kernel': 'rbf'}
 ```
 
 
@@ -382,7 +388,7 @@ svm_model_grid.best_estimator_
 [Output]  
 ```
 SVC(C=10.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
-    decision_function_shape='ovr', degree=3, gamma=100.0, kernel='rbf',
+    decision_function_shape='ovr', degree=3, gamma=0.001, kernel='rbf',
     max_iter=-1, probability=False, random_state=None, shrinking=True,
     tol=0.001, verbose=False)
 ```
@@ -394,7 +400,7 @@ svm_model_grid.best_score_
 
 [Output]  
 ```
-0.975648470770422
+0.9770349399922571
 ```
 
 4.6.2 Use Random-Search to perform hyper-paramater fine-tuning:
@@ -421,7 +427,7 @@ svm_model_grid.best_params_
 
 [Output]  
 ```
-{'C': 1.0, 'gamma': 100.0, 'kernel': 'rbf'}
+{'C': 10.0, 'gamma': 0.001, 'kernel': 'rbf'}
 ```
 
 
@@ -432,8 +438,8 @@ svm_model_grid.best_estimator_
 
 [Output]  
 ```
-SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
-    decision_function_shape='ovr', degree=3, gamma=100.0, kernel='rbf',
+SVC(C=10.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma=0.001, kernel='rbf',
     max_iter=-1, probability=False, random_state=None, shrinking=True,
     tol=0.001, verbose=False)
 ```
@@ -445,20 +451,17 @@ svm_model_grid.best_score_
 
 [Output]  
 ```
-0.9603412740536414
+0.9638212311280369
 ```
 
 4.6.3 Final Assessment
 
-In this final assessment, we comare the performance if teh trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms,
+In this final assessment, we comare the performance if teh trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms. Clearly, apply the serach algorithms has resulted in using more suitable hyperperameters for our DIGITS data set and yielding better classification accuracy.
 
 
-| model_name       | Default Paramaters | Grid-Serach Parameters | Random-Search Parameters
+| model_name       | Default Paramaters | Grid-Search Parameters | Random-Search Parameters
 |------------------|-------------------|--------------------|---------------------------------|
-|Accuracy          | 0.9416666666666667       | 0.975648470770422               | 0.9603412740536414 |
-
-
-
+|Accuracy          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
 
 
 
