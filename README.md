@@ -239,10 +239,9 @@ Evaluate the performance of the trained model using various performance metrics:
 
 The model accuracy captures how the model performs on new data (test set) in one value, in terms of the fraction of correct predictions:
 
-\begin{equation}
-Accuracy = \frac{\mbox{correct predictions}}{\mbox{total number of test images}} 
-\end{equation}
-
+```math
+Accuracy = \frac{\mbox{correct predictions}}{\mbox{total number of test images}
+```
 
 ```python
 # Overall accuracy:
