@@ -455,15 +455,23 @@ svm_model_grid.best_score_
 
 4.6.3 Final Assessment
 
-In this final assessment, we comare the performance if teh trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms. Clearly, apply the serach algorithms has resulted in using more suitable hyperperameters for our DIGITS data set and yielding better classification accuracy.
+In this final assessment, we compare the performance, in terms of its prediction accuracy, of the trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms. Clearly, apply the serach algorithms has resulted in using more suitable hyperperameters for our DIGITS data set and yielding better classification accuracy.
 
 
-| model_name       | Default Paramaters | Grid-Search Parameters | Random-Search Parameters
+| Model Name       | Default Paramaters | Grid-Search Parameters | Random-Search Parameters
 |------------------|-------------------|--------------------|---------------------------------|
-|Accuracy          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
-
+|SVM          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
 
 
 # 5. Comparison of the 5 ML classification Algorithms
+
+| Model Name       | Default Paramaters | Grid-Search Parameters | Random-Search Parameters
+|------------------|-------------------|--------------------|---------------------------------|
+|Support Vector Machine (SVM)          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
+|Logistric Regression (LR)         | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
+|Random Forest (RF)          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
+| Multi-Layer Perceptron (MLP)          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
+|Stochastic Gradient Descent (SGD)         | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
+
 
 # 6. Conclusions
