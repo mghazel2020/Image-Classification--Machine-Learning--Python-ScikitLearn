@@ -239,9 +239,6 @@ Evaluate the performance of the trained model using various performance metrics:
 
 The model accuracy captures how the model performs on new data (test set) in one value, in terms of the fraction of correct predictions:
 
-<img alt="formula" src="https://render.githubusercontent.com/render/math?math=Accuracy%20=%20\frac{\mbox{correct%20predictions}}{\mbox{total%20number%20of%20test%20images}}" />
-
-
 ```python
 # Overall accuracy:
 # - accuracy =  fraction of correct predictions =  correct predictions / total number of data points 
@@ -316,7 +313,8 @@ disp.figure_.suptitle("Confusion Matrix")
 ```
 [Output] 
 
-![image](https://user-images.githubusercontent.com/80174045/111040630-b529d100-83e8-11eb-9e26-e5ce47fd10ea.png)
+![image](https://user-images.githubusercontent.com/80174045/111052491-f2ee2000-840f-11eb-9682-5d79116dfe89.png)
+
 
 ## 4.6 Step 6: Perform hyperparameter search and fine-tuning to identify more optimal ML model paramaters and improve the model performance:
 
