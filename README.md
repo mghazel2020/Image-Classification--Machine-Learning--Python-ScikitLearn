@@ -173,6 +173,295 @@ if ( normalize_images_flag == 1):
   X_test =  X_test / 255
 ```
 
+
+## 4.2. Import and instantiate the Scikit-Learn ML model:
+
+We import and then instantiate the SVM model:
+
+```python
+# Instantiate the support vector (SVM) classifier
+svm_model = svm.SVC()
+```
+
+## 4.3. Train the selected SVM model using the training data:
+
+Training a SVM model on the training images can be done as follows:
+
+```python
+# Instantiate the support vector (SVM) classifier
+svm_model = svm.SVC()
+# Train the SVM model and printout its configuration parameters
+svm_model.fit(X_train, y_train)
+```
+[Output]  
+```
+SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+```
+
+## 4.4 Step 4: Deploy the trained SVM model to predict the classification of the test data:
+
+Deploying the trained SVM to classify the test images is straightforward, as follows:
+
+```python
+# Instantiate the support vector (SVM) classifier
+svm_model = svm.SVC()
+# Train the SVM model and printout its configuration parameters
+svm_model.fit(X_train, y_train)
+```
+[Output]  
+```
+SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+```
+We now visualize 25 randomly selected test images and their associated predicted labels.
+
+![image](https://user-images.githubusercontent.com/80174045/111040270-1355b480-83e7-11eb-9021-cb114f1b42cc.png)
+
+## 4.5 Step 5: Evaluate the performance of the trained model:
+
+Evaluate the performance of the trained model using various performance metrics:
+* The model accuracy score
+* The classification report summary
+* The confusion matrix
+
+### 4.5.1 Accuracy
+
+The model accuracy captures how the model performs on new data (test set) in one value:
+accuracy =  fraction of correct predictions = $\frac{\mbox{correct predictions}}{\mbox{total number of test images}}$ 
+
+
+```python
+# Overall accuracy:
+# - accuracy =  fraction of correct predictions =  correct predictions / total number of data points 
+# - Basically, how the model performs on new data (test set)
+# Use score method to get accuracy of model
+score = svm_model.score(X_test, y_test)
+print('The overall accuracy = ' + str(score))
+```
+[Output]  
+```
+The overall accuracy = 0.9416666666666667
+```
+
+### 4.5.2 Classification report summary:
+
+The classification_report builds a text report showing the main classification metrics:
+
+```python
+# Generate a classification_report
+print(f"Classification report for SVM classifier {svm_model}:\n"
+      f"{metrics.classification_report(y_test, svm_yhat)}\n")
+```
+[Output]  
+```
+Classification report for SVM classifier SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False):
+              precision    recall  f1-score   support
+
+           0       1.00      0.97      0.99        35
+           1       0.97      1.00      0.99        36
+           2       1.00      1.00      1.00        35
+           3       0.96      0.73      0.83        37
+           4       0.97      0.92      0.94        37
+           5       0.93      1.00      0.96        37
+           6       1.00      1.00      1.00        37
+           7       0.92      0.97      0.95        36
+           8       0.78      0.94      0.85        33
+           9       0.92      0.89      0.90        37
+
+    accuracy                           0.94       360
+   macro avg       0.94      0.94      0.94       360
+weighted avg       0.95      0.94      0.94       360
+```
+
+### 4.5.3 Confusion matrix:
+
+The confusion matrix plots the true digit values and their associated predicted digit labels:
+
+```python
+# We can also plot a confusion matrix of the true digit values and the predicted digit values.
+disp = metrics.plot_confusion_matrix(svm_model, X_test, y_test)
+# display the confusion matrix
+print(f"Confusion matrix:\n{disp.confusion_matrix}")
+# visualize the confusion matrix
+disp.figure_.suptitle("Confusion Matrix")
+```
+[Output]  
+```
+![image](https://user-images.githubusercontent.com/80174045/111040552-3af94c80-83e8-11eb-97dd-807f5ab1ad56.png)
+
+We should also examine some of the misclassified digits, in order to gain some insights of the reasons the trained SVM model has misclassified them.
+
+```python
+# We can also plot a confusion matrix of the true digit values and the predicted digit values.
+disp = metrics.plot_confusion_matrix(svm_model, X_test, y_test)
+# display the confusion matrix
+print(f"Confusion matrix:\n{disp.confusion_matrix}")
+# visualize the confusion matrix
+disp.figure_.suptitle("Confusion Matrix")
+```
+[Output] 
+
+![image](https://user-images.githubusercontent.com/80174045/111040630-b529d100-83e8-11eb-9e26-e5ce47fd10ea.png)
+
+## 4.6 Step 6: Perform hyperparameter search and fine-tuning to identify more optimal ML model paramaters and improve the model performance:
+
+The SVM image classification model was training using default hyper-parameters:
+
+* These configuration paramaters may not be optimal for our DIGITS data set
+* Thus, there is a need to expriment with different parameter values to see if we can achieve a better model performane:
+* We shall now explore grid-search and random-search to identify the parameter
+  * Train the selected model using the identified hyperparameters
+  * Deploy the improved trained on the test data
+  * Evaluate the performance of the improved model.
+
+The configuration hyperparamaters of the svm.SVC() model as as follows:
+
+[Output]  
+```
+SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+```
+
+We explore varying the values of the following 2 paramaters:
+
+* C:
+
+  * Controls the cost of mis-classification onthe training data
+  * Larger C values yield low bias and high variance
+  * Smaller C values yield higher bias and lower variance
+
+* gamma:
+
+  * Controls the shape of the RBF kernel (default kernel)
+   * Small gamma, Gaussian with large variance and lower bias
+  * Larger gamma value lead to high bias and lower variance.
+
+4.6.1 Use Grid-Search to perform hyper-paramater fine-tuning:
+
+```python
+# define the parameters search grid
+tuned_parameters = [{
+            'kernel': ['rbf'], 
+            'gamma':  [1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1e+0, 1e+1, 1e+2, 1e+3],
+            'C':      [1e-3, 1e-2, 1e-1, 1e+0, 1e+1, 1e+2, 1e+3]
+        }]
+# Instantiate the SVM model with grid-search
+svm_model_grid = GridSearchCV(svm.SVC(), tuned_parameters[0], verbose=3)
+# fit the model 
+svm_model_grid.fit(X_train, y_train)
+```
+
+After the grid-search as completed, we obtain the best hyper-paramaters and the improved SVM performance as follows:
+
+```python
+# get the best parameters combination
+svm_model_grid.best_params_
+```
+
+[Output]  
+```
+{'C': 10.0, 'gamma': 100.0, 'kernel': 'rbf'}
+```
+
+
+```python
+# get the best estimated SVM model parameters
+svm_model_grid.best_estimator_
+```
+
+[Output]  
+```
+SVC(C=10.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma=100.0, kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+```
+
+```python
+# get the best score (accuracy)
+svm_model_grid.best_score_
+```
+
+[Output]  
+```
+0.975648470770422
+```
+
+4.6.2 Use Random-Search to perform hyper-paramater fine-tuning:
+
+```python
+# define the parameters search grid
+tuned_parameters = [{
+            'kernel': ['rbf'], 
+            'gamma':  [1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1e+0, 1e+1, 1e+2, 1e+3],
+            'C':      [1e-3, 1e-2, 1e-1, 1e+0, 1e+1, 1e+2, 1e+3]
+        }]
+# Instantiate the SVM model with randomized-search
+svm_model_random = RandomizedSearchCV(svm.SVC(), tuned_parameters[0], verbose=3, n_iter = 10000, cv = 2, random_state=101 , n_jobs = -1)
+# fit the model 
+svm_model_random.fit(X_train, y_train)
+```
+
+After the grid-search as completed, we obtain the best hyper-paramaters and the improved SVM performance as follows:
+
+```python
+# get the best parameters combination
+svm_model_grid.best_params_
+```
+
+[Output]  
+```
+{'C': 1.0, 'gamma': 100.0, 'kernel': 'rbf'}
+```
+
+
+```python
+# get the best estimated SVM model parameters
+svm_model_grid.best_estimator_
+```
+
+[Output]  
+```
+SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma=100.0, kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+```
+
+```python
+# get the best score (accuracy)
+svm_model_grid.best_score_
+```
+
+[Output]  
+```
+0.9603412740536414
+```
+
+4.6.3 Final Assessment
+
+In this final assessment, we comare the performance if teh trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms,
+
+
+| model_name       | Default Paramaters | Grid-Serach Parameters | Random-Search Parameters
+|------------------|-------------------|--------------------|---------------------------------|
+|Accuracy          | 0.9416666666666667       | 0.975648470770422               | 0.9603412740536414 |
+
+
+
+
+
+
 # 5. Comparison of the 5 ML classification Algorithms
 
 # 6. Conclusions
