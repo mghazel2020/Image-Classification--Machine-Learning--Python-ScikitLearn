@@ -243,6 +243,15 @@ The model accuracy captures how the model performs on new data (test set) in one
 Accuracy = \frac{\mbox{correct predictions}}{\mbox{total number of test images}}
 ```
 
+$`Accuracy = \frac{\mbox{correct predictions}}{\mbox{total number of test images}}`$
+
+
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
+The syntax for inline latex is $`\sqrt{2}`$.
+
+
 ```python
 # Overall accuracy:
 # - accuracy =  fraction of correct predictions =  correct predictions / total number of data points 
