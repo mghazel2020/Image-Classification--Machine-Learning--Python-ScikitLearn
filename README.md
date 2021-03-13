@@ -53,6 +53,14 @@ We shall demonstrate the above process for the SVM model and then tabulate and c
 
 # 3. Computing Framework
 
+The 5 notebooks in **./code/** are Google Colaboratory (Colab) notebooks. Colab is a Python development environment, with pre-installed software requirements and dependencies,  that runs in the browser using Google Cloud (colab.research.google.com). We easily open and execute each notebook using Google Colab, as follows:
+
+* Download the notebooks and copy to them to your Google Drive, which is freely available if you have a GMAIL account.
+* Once copied to your Google Drive, you can easily open a notebook as follows:
+  * Right-click on the notebook
+  * Select: Open With --> Google Colaboratory
+* Once you open a notebook via Google Colaboratory you can then easily explore, edit, execute each cell and code blocks.
+
 # 3. Scikit-Learn ML Process Demonstration for SVM
 
 # 5. Comparison of the 5 ML classification Algorithms
