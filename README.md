@@ -10,7 +10,6 @@ The objective of this project is to demonstrate how to use scikit-learn to recog
     * Multi-Layer Perceptron (MLP)
     * Stochastic Gradient Descent (SGD)
 
-
 For each algorithm, we  applied and implemented the standard ML via Scikit-Learn process and illustrated the output of each step. 
 
 # 2. Data Set
@@ -485,7 +484,7 @@ The table below compares the performance of the 5 evaluated ML classification al
 |Support Vector Machine (SVM)          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
 |Logistric Regression (LR)         |   0.8577777777777778      | 0.9406361007847996               | 0.9287437004246013 |
 |Random Forest (RF)          | 0.9333333333333333       | 0.9492111885404567               | 0.9369451148879789 |
-| Multi-Layer Perceptron (MLP)          |0.9138888888888889       | 0.9617257065427797         |  |
+| Multi-Layer Perceptron (MLP)          |0.9138888888888889       | 0.9617257065427797         | 0.9366886072810814 |
 |Stochastic Gradient Descent (SGD)         | 0.8944444444444445       | 0.9276495354239256               | 0.9199881063532219 |
 
 The implementation of each of these algorithms case be found in **./code/** directory of this repository. 
