@@ -31,10 +31,10 @@ Next, we oultline the standard standard ML via Scikit-Learn process, which is ad
   * We shall explore the performance of the following ML algorithms:
 
     * Support Vector Machines (SVM)
-    * LogisticRegression
-    * DecisionTree and Random Forest
-    * Multilayer Perceptron (MLP)
-    * Stochasti Gradeint Descent (SGD)
+    * Logistic Regression (LR)
+    * Random Forest (RF)
+    * Multi-Layer Perceptron (MLP)
+    * Stochastic Gradient Descent (SGD)
 
 3. Train the selected ML model
 
@@ -468,10 +468,10 @@ In this final assessment, we compare the performance, in terms of its prediction
 | Model Name       | Default Paramaters | Grid-Search Parameters | Random-Search Parameters
 |------------------|-------------------|--------------------|---------------------------------|
 |Support Vector Machine (SVM)          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
-|Logistric Regression (LR)         | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
-|Random Forest (RF)          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
-| Multi-Layer Perceptron (MLP)          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
-|Stochastic Gradient Descent (SGD)         | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
+|Logistric Regression (LR)         |   0.8577777777777778      | 0.9406361007847996               | 0.9287437004246013 |
+|Random Forest (RF)          | 0.9333333333333333       | 0.9492111885404567               | 0.9369451148879789 |
+| Multi-Layer Perceptron (MLP)          |0.9138888888888889       |               |  |
+|Stochastic Gradient Descent (SGD)         | 0.8944444444444445       | 0.9276495354239256               | 0.9199881063532219 |
 
 
 # 6. Conclusions
