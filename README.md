@@ -465,7 +465,7 @@ svm_model_grid.best_score_
 In this final assessment, we compare the performance, in terms of its prediction accuracy, of the trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms. Clearly, apply the serach algorithms has resulted in using more suitable hyperperameters for our DIGITS data set and yielding better classification accuracy.
 
 
-| Model Name       | Default Paramaters | Random-Search Parameters | Grid-Search Parameters 
+| Model Name       | Default Parameters | Random-Search Parameters | Grid-Search Parameters 
 |------------------|-------------------|--------------------|---------------------------------|
 |SVM          | 0.9416666666666667       | 0.9638212311280369                |  |0.9770349399922571 |
 
@@ -480,7 +480,7 @@ The table below compares the performance of the 5 evaluated ML classification al
 * The SVM algorithm yields the best callification accurary when using the default algorithm paramaters as well as when using the optimized hyperparamaters, as obtained by the grid-search algorithm
 
 
-| Model Name       | Default Paramaters |  Random-Search Parameters |  Grid-Search Parameters
+| Model Name       | Default Parameters |  Random-Search Parameters |  Grid-Search Parameters
 |------------------|-------------------|--------------------|---------------------------------|
 |Support Vector Machine (SVM)          | 0.9416666666666667       | 0.9638212311280369               | 0.9770349399922571  |
 |Logistric Regression (LR)         |   0.8577777777777778      |   0.9287437004246013             |  0.9406361007847996 |
