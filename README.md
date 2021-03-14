@@ -464,11 +464,11 @@ svm_model_grid.best_score_
 
 In this final assessment, we compare the performance, in terms of its prediction accuracy, of the trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms. Clearly, apply the serach algorithms has resulted in using more suitable hyperperameters for our DIGITS data set and yielding better classification accuracy.
 
-|------------------|-------------------|--------------------|---------------------------------|
+
 | Model Name       | Default Paramaters | Random-Search Parameters | Grid-Search Parameters 
 |------------------|-------------------|--------------------|---------------------------------|
 |SVM          | 0.9416666666666667       | 0.9638212311280369                |  |0.9770349399922571 |
-|------------------|-------------------|--------------------|---------------------------------|
+
 
 # 5. Comparison of the 5 ML classification algorithms
 
@@ -479,7 +479,7 @@ The table below compares the performance of the 5 evaluated ML classification al
 * Although, for every ML algorithm, the grid-search algorithm yields the best calssification results, this comes at the expense of expensive computational complexity to search the full grid for more optimal paramaters.
 * The SVM algorithm yields the best callification accurary when using the default algorithm paramaters as well as when using the optimized hyperparamaters, as obtained by the grid-search algorithm
 
-|------------------|-------------------|--------------------|---------------------------------|
+
 | Model Name       | Default Paramaters |  Random-Search Parameters |  Grid-Search Parameters
 |------------------|-------------------|--------------------|---------------------------------|
 |Support Vector Machine (SVM)          | 0.9416666666666667       | 0.9638212311280369               | 0.9770349399922571  |
@@ -487,7 +487,7 @@ The table below compares the performance of the 5 evaluated ML classification al
 |Random Forest (RF)          | 0.9333333333333333       |  0.9369451148879789              | 0.9492111885404567  |
 | Multi-Layer Perceptron (MLP)          |0.9138888888888889       |  0.9366886072810814        | 0.9617257065427797  |
 |Stochastic Gradient Descent (SGD)         | 0.8944444444444445       |  0.9199881063532219              | 0.9276495354239256  |
-|------------------|-------------------|--------------------|---------------------------------|
+
 
 The implementation of each of these algorithms case be found in **./code/** directory of this repository. 
 
