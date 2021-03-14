@@ -2,7 +2,15 @@
 
 # 1. Objectives
 
-The objective of this project is to demonstrate how to use scikit-learn to recognize images of hand-written digits, using various Machine Learning (ML) built-in image classification functionalities and compare their performance. We  applied and implemented the standard ML via Scikit-Learn process and illustrated the output of each step. 
+The objective of this project is to demonstrate how to use scikit-learn to recognize images of hand-written digits, using 5 different Machine Learning (ML) built-in image classification functionalities and assess and compare their performance:
+
+    * Support Vector Machines (SVM)
+    * Logistic Regression (LR)
+    * Random Forest (RF)
+    * Multi-Layer Perceptron (MLP)
+    * Stochastic Gradient Descent (SGD)
+    * 
+For each algorithm, we  applied and implemented the standard ML via Scikit-Learn process and illustrated the output of each step. 
 
 # 2. Data Set
 
