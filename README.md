@@ -9,7 +9,8 @@ The objective of this project is to demonstrate how to use scikit-learn to recog
     * Random Forest (RF)
     * Multi-Layer Perceptron (MLP)
     * Stochastic Gradient Descent (SGD)
-    * 
+
+
 For each algorithm, we  applied and implemented the standard ML via Scikit-Learn process and illustrated the output of each step. 
 
 # 2. Data Set
