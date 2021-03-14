@@ -241,7 +241,7 @@ The model accuracy captures how the model performs on new data (test set) in one
 
 ```python
 # Overall accuracy:
-# - accuracy =  fraction of correct predictions =  correct predictions / total number of data points 
+# - Accuracy =  fraction of correct predictions =  correct predictions / total number of data points 
 # - Basically, how the model performs on new data (test set)
 # Use score method to get accuracy of model
 score = svm_model.score(X_test, y_test)
@@ -351,7 +351,7 @@ We explore varying the values of the following 2 paramaters:
    * Small gamma, Gaussian with large variance and lower bias
   * Larger gamma value lead to high bias and lower variance.
 
-4.6.1 Use Grid-Search to perform hyper-paramater fine-tuning:
+### 4.6.1 Use Grid-Search to perform hyper-paramater fine-tuning:
 
 ```python
 # define the parameters search grid
@@ -402,7 +402,7 @@ svm_model_grid.best_score_
 0.9770349399922571
 ```
 
-4.6.2 Use Random-Search to perform hyper-paramater fine-tuning:
+### 4.6.2 Use Random-Search to perform hyper-paramater fine-tuning:
 
 ```python
 # define the parameters search grid
@@ -428,7 +428,6 @@ svm_model_grid.best_params_
 ```
 {'C': 10.0, 'gamma': 0.001, 'kernel': 'rbf'}
 ```
-
 
 ```python
 # get the best estimated SVM model parameters
@@ -463,7 +462,7 @@ In this final assessment, we compare the performance, in terms of its prediction
 |SVM          | 0.9416666666666667       | 0.9770349399922571               | 0.9638212311280369 |
 
 
-# 5. Comparison of the 5 ML classification Algorithms
+# 5. Comparison of the 5 ML classification algorithms
 
 The table below compares the performance of the 5 evaluated ML classification algorithms on the DIGITS data set using the default parameters as well as the more optimal paramaters as obtained by the grid-search and randon-search algorithms. We note:
 
