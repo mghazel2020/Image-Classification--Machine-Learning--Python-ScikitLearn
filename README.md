@@ -467,7 +467,7 @@ In this final assessment, we compare the performance, in terms of its prediction
 
 | Model Name       | Default Parameters | Random-Search Parameters | Grid-Search Parameters 
 |------------------|-------------------|--------------------|---------------------------------|
-|SVM          | 0.9416666666666667       | 0.9638212311280369                |  |0.9770349399922571 |
+|SVM          | 0.9416666666666667       | 0.9638212311280369                |  0.9770349399922571 |
 
 
 # 5. Comparison of the 5 ML classification algorithms
