@@ -1,8 +1,6 @@
 # Image Classification using Machine Learning Scikit-Learn
 
-<p align="center">
-  <img figures/sklearn--banner.webp" />
-</p>
+<img src="figures/sklearn--banner.webp" width="500">
 
 ## 1. Objectives
 
@@ -473,7 +471,7 @@ In this final assessment, we compare the performance, in terms of its prediction
 |SVM          | 0.942     | 0.964               |  0.977 |
 
 
-## 6. Comparison of the 5 ML classification algorithms
+## 6. Comparison of the 5 ML Classification Algorithms
 
 The table below compares the performance of the 5 evaluated ML classification algorithms on the DIGITS data set using the default parameters as well as the more optimal paramaters as obtained by the grid-search and randon-search algorithms. We note:
 
