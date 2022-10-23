@@ -1,6 +1,10 @@
-# Image-Classification--Machine-Learning--ScikitLearn
+# Image Classification using Machine Learning Scikit-Learn
 
-# 1. Objectives
+<p align="center">
+  <img figures/sklearn--banner.webp" />
+</p>
+
+## 1. Objectives
 
 The objective of this project is to demonstrate how to use scikit-learn to recognize images of hand-written digits, using 5 different Machine Learning (ML) built-in image classification functionalities and assess and compare their performance:
 
@@ -12,7 +16,7 @@ The objective of this project is to demonstrate how to use scikit-learn to recog
 
 For each algorithm, we  applied and implemented the standard ML via Scikit-Learn process and illustrated the output of each step. 
 
-# 2. Data Set
+## 2. Data Set
 
 Scikit-learn comes with a few small datasets that do not require to download any file from some external website. We shall use the the DIGITS dataset, which allows us to quickly train and deeploy various ML classification algorithms implemented in the scikit and assess and compare their performance. Unlike the MINIST data set, the DIGIT data set is however too small to be representative of real world machine learning image classification tasks. After demonstrating the basics of logisitic regression, one can easily the MNIST Handwritten digit database. 
 
@@ -30,7 +34,7 @@ A sample of the DIGITS images are illustrated next.
 
 Next, we oultline the standard standard ML via Scikit-Learn process, which is adopted as our appraoch.
     
-# 4. Approach
+## 3. Approach
 
 1. Load the input data set and split into training and test data subsets 
 
@@ -63,7 +67,7 @@ Next, we oultline the standard standard ML via Scikit-Learn process, which is ad
 
 We shall demonstrate the above process for the SVM model and then tabulate and compare the performance of the 5 different implemented ML classification algorithms. 
 
-# 3. Computing Framework
+## 4. Computing Framework
 
 The 5 notebooks in **./code/** are Google Colaboratory (Colab) notebooks. Colab is a Python development environment, with pre-installed software requirements and dependencies,  that runs in the browser using Google Cloud ([Google Colaboratory](https://colab.research.google.com)). We easily open and execute each notebook using Google Colab, as follows:
 
@@ -73,9 +77,9 @@ The 5 notebooks in **./code/** are Google Colaboratory (Colab) notebooks. Colab 
   * Select: Open With --> Google Colaboratory
 * Once you open a notebook via Google Colaboratory you can then easily explore, edit, execute each cell and code blocks.
 
-# 4. Scikit-Learn ML Process Demonstration for SVM
+## 5. Scikit-Learn ML Process Demonstration for SVM
 
-## 4.1. Load and explore the input DIGITS data set and split into training and test data subsets 
+### 5.1. Load and explore the input DIGITS data set and split into training and test data subsets 
 
 First, load the DIGITS data set and examine the numbe rof examples and their classification.
 
@@ -187,7 +191,7 @@ if ( normalize_images_flag == 1):
   X_test =  X_test / 255
 ```
 
-## 4.2. Import and instantiate the Scikit-Learn ML model:
+### 5.2. Import and instantiate the Scikit-Learn ML model:
 
 We import and then instantiate the SVM model:
 
@@ -196,7 +200,7 @@ We import and then instantiate the SVM model:
 svm_model = svm.SVC()
 ```
 
-## 4.3. Train the selected SVM model using the training data:
+### 5.3. Train the selected SVM model using the training data:
 
 Training a SVM model on the training images can be done as follows:
 
@@ -214,7 +218,7 @@ SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
     tol=0.001, verbose=False)
 ```
 
-## 4.4 Step 4: Deploy the trained SVM model to predict the classification of the test data:
+### 5.4 Step 4: Deploy the trained SVM model to predict the classification of the test data:
 
 Deploying the trained SVM to classify the test images is straightforward, as follows:
 
@@ -236,14 +240,14 @@ We now visualize 25 randomly selected test images and their associated predicted
 ![image](https://user-images.githubusercontent.com/80174045/111051911-7eb17d80-840b-11eb-90dd-cc5dff68bb7c.png)
 
 
-## 4.5 Step 5: Evaluate the performance of the trained model:
+### 5.5 Step 5: Evaluate the performance of the trained model:
 
 Evaluate the performance of the trained model using various performance metrics:
 * The model accuracy score
 * The classification report summary
 * The confusion matrix
 
-### 4.5.1 Accuracy
+#### 5.5.1 Accuracy
 
 The model accuracy captures how the model performs on new data (test set) in one value, in terms of the fraction of correct predictions:
 
@@ -260,7 +264,7 @@ print('The overall accuracy = ' + str(score))
 The overall accuracy = 0.9416666666666667
 ```
 
-### 4.5.2 Classification report summary:
+#### 5.5.2 Classification report summary:
 
 The classification_report builds a text report showing the main classification metrics:
 
@@ -293,7 +297,7 @@ Classification report for SVM classifier SVC(C=1.0, break_ties=False, cache_size
 weighted avg       0.95      0.94      0.94       360
 ```
 
-### 4.5.3 Confusion matrix:
+#### 5.5.3 Confusion matrix:
 
 The confusion matrix plots the true digit values and their associated predicted digit labels:
 
@@ -324,7 +328,7 @@ disp.figure_.suptitle("Confusion Matrix")
 ![image](https://user-images.githubusercontent.com/80174045/111052491-f2ee2000-840f-11eb-9682-5d79116dfe89.png)
 
 
-## 4.6 Step 6: Perform hyperparameter search and fine-tuning to identify more optimal ML model paramaters and improve the model performance:
+### 5.6 Step 6: Perform hyperparameter search and fine-tuning to identify more optimal ML model paramaters and improve the model performance:
 
 The SVM image classification model was training using default hyper-parameters:
 
@@ -359,7 +363,7 @@ We explore varying the values of the following 2 paramaters:
    * Small gamma, Gaussian with large variance and lower bias
   * Larger gamma value lead to high bias and lower variance.
 
-### 4.6.1 Use Grid-Search to perform hyper-paramater fine-tuning:
+#### 5.6.1 Use Grid-Search to perform hyper-paramater fine-tuning:
 
 ```python
 # define the parameters search grid
@@ -386,7 +390,6 @@ svm_model_grid.best_params_
 {'C': 10.0, 'gamma': 0.001, 'kernel': 'rbf'}
 ```
 
-
 ```python
 # get the best estimated SVM model parameters
 svm_model_grid.best_estimator_
@@ -410,7 +413,7 @@ svm_model_grid.best_score_
 0.9770349399922571
 ```
 
-### 4.6.2 Use Random-Search to perform hyper-paramater fine-tuning:
+#### 5.6.2 Use Random-Search to perform hyper-paramater fine-tuning:
 
 ```python
 # define the parameters search grid
@@ -460,17 +463,17 @@ svm_model_grid.best_score_
 0.9638212311280369
 ```
 
-### 4.6.3 Final Assessment
+#### 5.6.3 Final Assessment
 
 In this final assessment, we compare the performance, in terms of its prediction accuracy, of the trained SVM model using default paramaters, as well as the more optimal parameters, as identified by the Grid-Search and the Random-Serach algorithms. Clearly, apply the serach algorithms has resulted in using more suitable hyperperameters for our DIGITS data set and yielding better classification accuracy.
 
 
 | Model Name       | Default Parameters | Random-Search Parameters | Grid-Search Parameters 
 |------------------|-------------------|--------------------|---------------------------------|
-|SVM          | 0.9416666666666667       | 0.9638212311280369                |  0.9770349399922571 |
+|SVM          | 0.942     | 0.964               |  0.977 |
 
 
-# 5. Comparison of the 5 ML classification algorithms
+## 6. Comparison of the 5 ML classification algorithms
 
 The table below compares the performance of the 5 evaluated ML classification algorithms on the DIGITS data set using the default parameters as well as the more optimal paramaters as obtained by the grid-search and randon-search algorithms. We note:
 
@@ -482,15 +485,32 @@ The table below compares the performance of the 5 evaluated ML classification al
 
 | Model Name       | Default Parameters |  Random-Search Parameters |  Grid-Search Parameters
 |------------------|-------------------|--------------------|---------------------------------|
-|Support Vector Machine (SVM)          | 0.9416666666666667       | 0.9638212311280369               | 0.9770349399922571  |
-|Logistric Regression (LR)         |   0.8577777777777778      |   0.9287437004246013             |  0.9406361007847996 |
-|Random Forest (RF)          | 0.9333333333333333       |  0.9369451148879789              | 0.9492111885404567  |
-| Multi-Layer Perceptron (MLP)          |0.9138888888888889       |  0.9366886072810814        | 0.9617257065427797  |
-|Stochastic Gradient Descent (SGD)         | 0.8944444444444445       |  0.9199881063532219              | 0.9276495354239256  |
+|Support Vector Machine (SVM)          | 0.942       | 0.964              | 0.977  |
+|Logistric Regression (LR)         |   0.858      |   0.9287             |  0.941 |
+|Random Forest (RF)          | 0.933      |  0.937             | 0.949  |
+| Multi-Layer Perceptron (MLP)          |0.914       |  0.9367        | 0.962  |
+|Stochastic Gradient Descent (SGD)         | 0.895       |  0.920             | 0.928  |
 
 
 The implementation of each of these algorithms case be found in **./code/** directory of this repository. 
 
-# 6. Conclusions
+## 7. Conclusions
 
 In this project, we demonstrated how to use scikit-learn to recognize images of hand-written digits, using various Machine Learning (ML) built-in image classification functionalities and compare their performance. We applied and implemented the standard ML via Scikit-Learn process, and illustrated the output of each step. 
+
+## 8. Future Work
+
+We plan to investigate the following related issues:
+
+Perform more comprehensive performance evaluation and comparison of the various machine learning classification algorithms, using more comprehensive quantitative metrics, such as:
+PR curves
+ROC curves.
+
+
+## 9. References
+
+1. Scikit-learn. Scikit-learn: Machine learning in Python. Retrieved from: https://scikit-learn.org/stable/ (October 4th, 2022)
+2. Scikit-learn. Neural network models (supervised). Retrieved from: https://scikit-learn.org/stable/modules/neural_networks_supervised.html  (October 4th, 2022)
+3. Kapernikov.  Tutorial: image classification with scikit-learn. Retrieved from: https://kapernikov.com/tutorial-image-classification-with-scikit-learn/  (October 4th, 2022)
+4. Galarnyk, M. Logistic Regression using Python (scikit-learn). Retrieved from: https://towardsdatascience.com/logistic-regression-using-python-sklearn-numpy-mnist-handwriting-recognition-matplotlib-a6b31e2b166a  (October 4th, 2022)
+5. Gurupratap, S. M. Learn to do Image Classification using Stochastic Gradient Descent and Random Forest Classifier. Retrieved from: https://medium.com/@gurupratap.matharu/learn-to-do-image-classification-using-stochastic-gradient-descent-and-random-forest-classifier-fd9b7bc95581  (October 4th, 2022)
