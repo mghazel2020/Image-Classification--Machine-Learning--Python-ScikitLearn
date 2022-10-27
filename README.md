@@ -1,4 +1,4 @@
-# Image Classification using Machine Learning Scikit-Learn
+# Image Classification using Python Machine Learning Scikit-Learn
 
 <img src="figures/sklearn--banner.webp" width="500">
 
@@ -507,8 +507,8 @@ ROC curves.
 
 ## 9. References
 
-1. Scikit-learn. Scikit-learn: Machine learning in Python. Retrieved from: https://scikit-learn.org/stable/ (October 4th, 2022)
-2. Scikit-learn. Neural network models (supervised). Retrieved from: https://scikit-learn.org/stable/modules/neural_networks_supervised.html  (October 4th, 2022)
-3. Kapernikov.  Tutorial: image classification with scikit-learn. Retrieved from: https://kapernikov.com/tutorial-image-classification-with-scikit-learn/  (October 4th, 2022)
-4. Galarnyk, M. Logistic Regression using Python (scikit-learn). Retrieved from: https://towardsdatascience.com/logistic-regression-using-python-sklearn-numpy-mnist-handwriting-recognition-matplotlib-a6b31e2b166a  (October 4th, 2022)
-5. Gurupratap, S. M. Learn to do Image Classification using Stochastic Gradient Descent and Random Forest Classifier. Retrieved from: https://medium.com/@gurupratap.matharu/learn-to-do-image-classification-using-stochastic-gradient-descent-and-random-forest-classifier-fd9b7bc95581  (October 4th, 2022)
+1. Scikit-learn. Scikit-learn: Machine learning in Python. Retrieved from: https://scikit-learn.org/stable/
+2. Scikit-learn. Neural network models (supervised). Retrieved from: https://scikit-learn.org/stable/modules/neural_networks_supervised.html
+3. Kapernikov.  Tutorial: image classification with scikit-learn. Retrieved from: https://kapernikov.com/tutorial-image-classification-with-scikit-learn/ 
+4. Galarnyk, M. Logistic Regression using Python (scikit-learn). Retrieved from: https://towardsdatascience.com/logistic-regression-using-python-sklearn-numpy-mnist-handwriting-recognition-matplotlib-a6b31e2b166a
+5. Gurupratap, S. M. Learn to do Image Classification using Stochastic Gradient Descent and Random Forest Classifier. Retrieved from: https://medium.com/@gurupratap.matharu/learn-to-do-image-classification-using-stochastic-gradient-descent-and-random-forest-classifier-fd9b7bc95581  
