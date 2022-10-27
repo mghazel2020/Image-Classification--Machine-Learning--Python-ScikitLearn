@@ -29,7 +29,7 @@ A quick summary of the DIGITS data set is as follows:
 
 A sample of the DIGITS images are illustrated next.
 
-![image](https://user-images.githubusercontent.com/80174045/111051767-6bea7900-840a-11eb-99de-ecf39a3c76aa.png)
+![image](https://user-images.githubusercontent.com/80174045/111051767-6bea7900-840a-11eb-99de-ecf39a3c76aa.png width="1000")
 
 Next, we oultline the standard standard ML via Scikit-Learn process, which is adopted as our appraoch.
     
@@ -145,7 +145,7 @@ visualize_images_and_labels(num_visualized_images)
 ```
 [Output]  
 
-![image](https://user-images.githubusercontent.com/80174045/111051839-dac7d200-840a-11eb-9795-6f69400af64a.png)
+![image](https://user-images.githubusercontent.com/80174045/111051839-dac7d200-840a-11eb-9795-6f69400af64a.png width="1000")
 
 We  Split the data into training and testing subsets:
 *   Use 20 percent of data set for testing  
