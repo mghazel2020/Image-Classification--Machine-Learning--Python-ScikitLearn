@@ -1,6 +1,6 @@
 # Image Classification using Python Machine Learning Scikit-Learn
 
-<img src="figures/sklearn--banner.webp" width="500">
+<img src="figures/sklearn--banner.webp" width="1000">
 
 
 ## 1. Objectives
