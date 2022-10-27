@@ -2,6 +2,7 @@
 
 <img src="figures/sklearn--banner.webp" width="500">
 
+
 ## 1. Objectives
 
 The objective of this project is to demonstrate how to use scikit-learn to recognize images of hand-written digits, using 5 different Machine Learning (ML) built-in image classification functionalities and assess and compare their performance:
